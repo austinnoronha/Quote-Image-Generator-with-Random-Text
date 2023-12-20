@@ -3,7 +3,7 @@
 ## 📓 Overview
 Welcome to the Image Generator! 
 
-This Python-based script allows you to create engaging images in square dimensions using random text generated from [https://api.quotable.io/](Quotable API).
+This Python-based script allows you to create engaging images in square dimensions using random text generated from [Quotable API](https://api.quotable.io/).
 
 The script utilizes popular libraries such as PIL (Pillow), textwrap, and requests.
 
