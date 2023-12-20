@@ -1,6 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
 import random
 import textwrap
+import requests
+
 
 #Configuation and Settings
 FONT_TYPE='./font/K2FyfZJVlfNNSEBXGb7TCI6oBjLz.ttf'
@@ -78,8 +80,14 @@ def writeTextOnImage(bg_name='bg.png', text_index = 0, MAX_W = 1080, MAX_H = 108
     fnt = ImageFont.truetype(FONT_TYPE, FONT_SIZE)
     d = ImageDraw.Draw(img)
     wid, ht = 10, 32
+    
+    url = "https://api.quotable.io/quotes/random?minLength=100&maxLength=140"
+    payload = {"tags": 'technology', "maxLength":180}
+    response = requests.get(url, params=payload)
+    response_json = response.json()
     text = "Let's write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library."
-    #text = "Let's write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library. On write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library"
+    if(response_json and response_json[0]):
+        text = f"{response_json[0]['content']}     by {response_json[0]['author']}"
     para = textwrap.wrap(text, width=FONT_SIZE)
     current_h, pad = ((MAX_W - wid) / 3), 20
     text_color = TEXT_COLOR_SET[text_index]
