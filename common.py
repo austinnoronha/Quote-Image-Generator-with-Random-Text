@@ -2,28 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import random
 import textwrap
 import requests
-
-
-#Configuation and Settings
-FONT_TYPE='./font/K2FyfZJVlfNNSEBXGb7TCI6oBjLz.ttf'
-#FONT_TYPE='./font/6NUK8FKMIQOGaw6wjYT7ZHG_zsBBfiftWmA08mCgdfM.ttf'
-FONT_SIZE=40
-BG_COLOR_SET = [
-    (2, 48, 71),
-    (40, 54, 24),
-    (38, 70, 83),
-    (240, 234, 210),
-    (20, 33, 61),
-    (244, 140, 6)
-]
-TEXT_COLOR_SET = [
-    (255, 183, 3),
-    (254, 250, 224),
-    (231, 111, 81),
-    (181, 131, 141),
-    (252, 163, 17),
-    (3, 7, 30)
-]
+from config import QUOTE_GEN_API, SAMPLE_TEXT, FONT_SIZE, FONT_TYPE, BG_COLOR_SET, TEXT_COLOR_SET
 
 def genSimpleImg(MAX_W = 1080, MAX_H = 1080):
     img  = Image.new( mode = "RGB", size = (MAX_W, MAX_H) )
@@ -34,8 +13,7 @@ def genInstaImg(MAX_W = 1080, MAX_H = 1080):
     fnt = ImageFont.truetype(FONT_TYPE, FONT_SIZE)
     d = ImageDraw.Draw(img)
     wid, ht = 10, 32
-    text = "Let's write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library."
-    #text = "Let's write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library. On write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library"
+    text = SAMPLE_TEXT
     para = textwrap.wrap(text, width=FONT_SIZE)
     current_h, pad = ((MAX_W - wid) / 3), 20
     for line in para:
@@ -81,11 +59,11 @@ def writeTextOnImage(bg_name='bg.png', text_index = 0, MAX_W = 1080, MAX_H = 108
     d = ImageDraw.Draw(img)
     wid, ht = 10, 32
     
-    url = "https://api.quotable.io/quotes/random?minLength=100&maxLength=140"
+    url = QUOTE_GEN_API
     payload = {"tags": 'technology', "maxLength":180}
     response = requests.get(url, params=payload)
     response_json = response.json()
-    text = "Let's write a Python tutorial showing how to center a multiline string vertically and horizontally on an image using the Pillow library."
+    text = SAMPLE_TEXT
     if(response_json and response_json[0]):
         text = f"{response_json[0]['content']}     by {response_json[0]['author']}"
     para = textwrap.wrap(text, width=FONT_SIZE)
@@ -108,6 +86,6 @@ def writeTextOnImage(bg_name='bg.png', text_index = 0, MAX_W = 1080, MAX_H = 108
             )
         current_h += ht + pad
     img.save('quote.png', type='PNG')
-    #img.show()
+    img.show()
     
 
