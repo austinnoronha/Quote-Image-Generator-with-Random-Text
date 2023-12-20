@@ -2,3 +2,5 @@
 .bk
 .bak
 .DStore
+*.pyc
+*.pycache
