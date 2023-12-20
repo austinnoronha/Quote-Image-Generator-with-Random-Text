@@ -4,12 +4,12 @@ import textwrap
 
 #Configuation and Settings
 FONT_TYPE='./font/K2FyfZJVlfNNSEBXGb7TCI6oBjLz.ttf'
+#FONT_TYPE='./font/6NUK8FKMIQOGaw6wjYT7ZHG_zsBBfiftWmA08mCgdfM.ttf'
 FONT_SIZE=40
 BG_COLOR_SET = [
     (2, 48, 71),
     (40, 54, 24),
     (38, 70, 83),
-    (247, 37, 133),
     (240, 234, 210),
     (20, 33, 61),
     (244, 140, 6)
@@ -18,7 +18,6 @@ TEXT_COLOR_SET = [
     (255, 183, 3),
     (254, 250, 224),
     (231, 111, 81),
-    (67, 97, 238),
     (181, 131, 141),
     (252, 163, 17),
     (3, 7, 30)
@@ -59,7 +58,7 @@ def genInstaImg(MAX_W = 1080, MAX_H = 1080):
 def genBGImgMesh(MAX_W = 1080, MAX_H = 1080):
     random_index = random.randint(0, len(BG_COLOR_SET)-1)
     foreground_color = BG_COLOR_SET[random_index]
-    background = Image.new('RGB', (MAX_W, MAX_H), (0,0,0))
+    background = Image.new('RGB', (MAX_W, MAX_H), (237, 246, 249)) #(0,0,0)
     foreground = Image.new('RGB', (MAX_W, MAX_H), foreground_color)
     mask = Image.new('L', (MAX_W, MAX_H), 0)
     draw = ImageDraw.Draw(mask)
@@ -95,8 +94,8 @@ def writeTextOnImage(bg_name='bg.png', text_index = 0, MAX_W = 1080, MAX_H = 108
             fill=text_color, 
             #fill=(0, 127, 0),
             #align="center",
-            stroke_width=2, 
-            stroke_fill=2,
+            stroke_width=1, 
+            stroke_fill=1,
             anchor='mm'
             )
         current_h += ht + pad
