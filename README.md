@@ -1,20 +1,25 @@
-# Instagram Post Generator 🚀
+# Quote Image Generator with Random Text 🚀
 
-## Overview
-Welcome to the Instagram Post Generator Bot! This Python-based script allows you to create engaging Instagram post square images using random text generated from Quotable API. The script utilizes popular libraries such as PIL (Pillow), textwrap, and requests.
+## 📓 Overview
+Welcome to the Image Generator! 
 
-## Features
-- Generate Instagram post images with random and inspirational quotes.
+This Python-based script allows you to create engaging images in square dimensions using random text generated from [https://api.quotable.io/](Quotable API).
+
+The script utilizes popular libraries such as PIL (Pillow), textwrap, and requests.
+
+## 📜 Key Features:
+- Random Text from Quotable API: Fetch dynamic and inspiring quotes from [https://api.quotable.io/](Quotable API)
 - Easily configurable to customize the appearance of generated images.
+- onfiguration via .env: Easily customize your experience with a configuration file.
 - Learn the process of generating images with text using the Python Imaging Library (PIL).
 
-## Dependencies
+## ⚙️ Dependencies
 Make sure you have the following dependencies installed:
 
 - Pillow (PIL): ```pip install Pillow```
 - Requests: ```pip install requests```
 
-## How to Use
+## 🐺 How to Use
 
 Clone the repository:
 ```bash
