@@ -34,12 +34,16 @@ python main.py
 ## Customize the script by modifying the configuration parameters.
 
 ### Configuration
-You can easily customize the script by adjusting the following parameters in the insta_gen_bot.py file:
+You can easily customize the script by adjusting the following parameters in ```.env```:
 
 - IMAGE_SIZE: Set the size of the generated image.
 - FONT_SIZE: Adjust the font size of the text.
-- MAX_LINES: Control the maximum number of lines for the quote text.
-- QUOTE_API_URL: Change the URL for fetching random quotes.
+- QUOTE_GEN_API: Change the URL for fetching random quotes.
+- FONT_TYPE: Choose from the set of fonts in the ```/font``` folder
+- BG_COLOR_SET: A list having background colors tuples
+- TEXT_COLOR_SET: A list having text colors tuples
+
+```the BG_COLOR_SET and TEXT_COLOR_SET set should have equal no.of sets, as it chooses a random int index to choose the color tuple for RGB```
 
 # Example
 
@@ -50,5 +54,5 @@ You can easily customize the script by adjusting the following parameters in the
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 # Acknowledgments
-- Thanks to the Quotable API for providing inspirational quotes.
+- Thanks to the [https://api.quotable.io/](https://api.quotable.io/) for providing inspirational quotes.
 - Feel free to explore, modify, and share your generated Instagram posts! If you encounter any issues or have suggestions, feel free to open an issue or contribute to the project. Happy coding!
