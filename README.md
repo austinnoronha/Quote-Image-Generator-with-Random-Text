@@ -45,7 +45,6 @@ You can easily customize the script by adjusting the following parameters in the
 
 <div class="Box-sc-g0xbh4-0 iIZCet"><img alt="quote.png" src="https://github.com/austinnoronha/insta_gen_bot/blob/development/quote.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI"></div>
 
-<div class="Box-sc-g0xbh4-0 iIZCet"><img alt="bg.png" src="https://github.com/austinnoronha/insta_gen_bot/blob/development/bg.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI"></div>
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
