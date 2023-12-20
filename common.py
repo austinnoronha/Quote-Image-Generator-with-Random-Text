@@ -107,7 +107,7 @@ def writeTextOnImage(bg_name='bg.png', text_index = 0, MAX_W = 1080, MAX_H = 108
             anchor='mm'
             )
         current_h += ht + pad
-    #img.save('pil_text_font.png', type='PNG')
-    img.show()
+    img.save('quote.png', type='PNG')
+    #img.show()
     
 
