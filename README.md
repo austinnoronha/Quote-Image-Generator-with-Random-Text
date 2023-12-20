@@ -8,7 +8,7 @@ This Python-based script allows you to create engaging images in square dimensio
 The script utilizes popular libraries such as PIL (Pillow), textwrap, and requests.
 
 ## 📜 Key Features:
-- Random Text from Quotable API: Fetch dynamic and inspiring quotes from [https://api.quotable.io/](Quotable API)
+- Random Text from Quotable API: Fetch dynamic and inspiring quotes from [Quotable API](https://api.quotable.io/)
 - Easily configurable to customize the appearance of generated images.
 - onfiguration via .env: Easily customize your experience with a configuration file.
 - Learn the process of generating images with text using the Python Imaging Library (PIL).
